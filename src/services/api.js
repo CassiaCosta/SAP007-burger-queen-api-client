@@ -1,18 +1,31 @@
-const BASE_URL = "https://lab-api-bq.herokuapp.com";
+import { URL } from "./localStorage.js";
 
-export const createUser = (endpoint, values) => {
-  return fetch(`${BASE_URL}${endpoint}`, {
+export const createUser = (endpoint, elements) => {
+  return fetch(`${URL}${endpoint}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      // "Authorization": getToken(),
     },
     body: JSON.stringify({
-      name: values.name,
-      email: values.email,
-      password: values.password,
-      role: values.role,
-      restaurant: 'Burguer Queen',
+      name: elements.name,
+      email: elements.email,
+      password: elements.password,
+      role: elements.role,
+      restaurant: "Burguer Queen",
+    }),
+  });
+};
+
+export const loginUser = (endpoint, elements) => {
+  return fetch(`${URL}${endpoint}` , {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email: elements.email,
+      password: elements.password,
     })
-  },
-  );
+  });
 };
