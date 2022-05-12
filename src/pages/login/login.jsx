@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <div className='main'>
@@ -14,7 +14,7 @@ const Login = () => {
         <input className='login-input' type='password' name='password' />
         <button className='login-button draw' type='submit'>Logar</button>
         <p className='new-user'>Não possui cadastro?</p>
-        <button className='login-button draw' onClick={() => { history('/signup') }}>Cadastre-se</button>
+        <button className='login-button draw' onClick={() => { navigate('/signup') }}>Cadastre-se</button>
       </form>
     </div>
   );  
