@@ -5,7 +5,6 @@ export const createUser = (endpoint, elements) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      // "Authorization": getToken(),
     },
     body: JSON.stringify({
       name: elements.name,
