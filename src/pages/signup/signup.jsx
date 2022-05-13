@@ -1,11 +1,11 @@
 import React from 'react';
-import useFormSignup from './useSignupForm';
+import useFormSignup from './signupForm';
 
 const SignUp = () => {
   const { handleChange, handleSubmit } = useFormSignup();
 
   return (
-    <div className='main'>
+    <main className='main'>
       <section className='signup-page'>
         <h1 className='signup-title'>Cadastre-se</h1>
         <label className='signup-labels'>Seu nome</label>
@@ -24,7 +24,7 @@ const SignUp = () => {
         </span>
         <button className='signup-button draw' type='submit' onClick={handleSubmit}>Cadastrar</button>  
       </section>
-    </div>
+    </main>
   );
 };
 

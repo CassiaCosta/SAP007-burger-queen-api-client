@@ -1,6 +1,6 @@
-export const URL = 'http://lab-api-bq.herokuapp.com';
+export const URL = 'http://lab-api-bq.herokuapp.com/';
 
-export const TokenAndRole = (token, role) => {
+export const createTokenAndRole = (token, role) => {
   localStorage.setItem('token', token);
   localStorage.setItem('role', role);
 }
