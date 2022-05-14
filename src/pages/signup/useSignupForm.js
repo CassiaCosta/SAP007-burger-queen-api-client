@@ -19,6 +19,8 @@ const useFormSignup = () => {
     });
   };
 
+  const [errors, setErrors] = useState('');
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -29,11 +31,14 @@ const useFormSignup = () => {
           case 200:
             return res.json();
           case 400:
+            setErrors(() => 'Falta algo a ser preenchido!')
             console.log("Falta algo a ser preenchido!");
             break;
           case 403:
             console.log("E-mail já cadastrado");
             break;
+          default:
+            console.log("Algo deu errado. Tente novamente mais tarde!");
         }
       })
       .then((data) => {
@@ -52,6 +57,6 @@ const useFormSignup = () => {
       });
   };
 
-  return { handleChange, handleSubmit };
+  return { handleChange, handleSubmit, errors };
 };
 export default useFormSignup;
