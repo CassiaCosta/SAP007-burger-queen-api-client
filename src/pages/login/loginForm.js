@@ -6,6 +6,7 @@ import { createTokenAndRole } from '../../services/localStorage';
 
 
 const useFormLogin = () => {
+  const [error, setError] = useState('')
   const [items, setItems] = useState({
     email: '',
     password: '',
@@ -23,16 +24,14 @@ const useFormLogin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    loginUser('auth', items)
+    loginUser('/auth', items)
     .then((res) => {
       switch (res.status) {
         case 200:
           return res.json();
         case 400:
-          console.log('Falta algo a ser preenchido!');
-          break;
-        case 403:
-          console.log('E-mail já cadastrado');
+          console.log('E-mail e/ou senha inválidos!');
+          setError('E-mail e/ou senha inválidos!')
           break;
         default:
       }
@@ -51,7 +50,7 @@ const useFormLogin = () => {
       });
   };
 
-  return { handleChange, handleSubmit };
+  return { handleChange, handleSubmit, error };
 };
 
 export default useFormLogin;

@@ -1,8 +1,8 @@
 import React from 'react';
-import useFormSignup from './signupForm';
+import useFormSignup from './useSignupForm';
 
 const SignUp = () => {
-  const { handleChange, handleSubmit } = useFormSignup();
+  const { handleChange, handleSubmit, error } = useFormSignup();
 
   return (
     <main className='main'>
@@ -20,7 +20,7 @@ const SignUp = () => {
         <input className='signup-input' type='email' placeholder='username@example.com' name='email' autoComplete='off' onChange={handleChange}/>
         <label className='signup-labels'>Senha</label>
         <input className='signup-input' type='password' placeholder='Senha' name='password' onChange={handleChange} />
-        <span className='errors-message'></span>
+        <span className='errors-message'>{error}</span>
         <button className='signup-button draw' type='submit' onClick={handleSubmit}>Cadastrar</button>  
       </section>
     </main>

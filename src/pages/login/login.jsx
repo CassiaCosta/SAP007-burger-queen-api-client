@@ -4,7 +4,7 @@ import  useFormLogin  from './loginForm';
 
 
 const Login = () => {
-  const { handleChange, handleSubmit } = useFormLogin();
+  const { handleChange, handleSubmit, error } = useFormLogin();
   const navigate = useNavigate();
   return (
     <main className='main'>
@@ -14,6 +14,7 @@ const Login = () => {
         <input className='login-input' type='email' name='email' autoComplete='off' onChange={handleChange}/>
         <label className='login-labels'>Senha</label>
         <input className='login-input' type='password' name='password' onChange={handleChange}/>
+        <span className='errors-message'>{error}</span>
         <button className='login-button draw' onClick={handleSubmit}>Logar</button>
         <p className='new-user'>Não possui cadastro?</p>
         <button className='login-button draw' onClick={() => { navigate('/signup') }}>Cadastre-se</button>

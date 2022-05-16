@@ -30,13 +30,14 @@ export const loginUser = (endpoint, items) => {
 };
 
 export const getProducts = (endpoint) => {
-  return fetch(`${URL}${endpoint}` , {
+  return fetch(`${URL}${endpoint}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': getToken()
     },
-  });
+  })
+  .then(res => res.json())
 }
 
 export const sendOrder = (endpoint, orderInfo, addItem) => {
