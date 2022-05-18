@@ -52,7 +52,6 @@ const useFormSignup = () => {
       })
       .catch((error) => {
         //Erro de comunicação do fetch com a api
-        setError('Algo deu errado. Tente novamente mais tarde!')
       });
   };
 

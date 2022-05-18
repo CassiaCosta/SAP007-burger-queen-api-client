@@ -46,7 +46,6 @@ const useFormLogin = () => {
       })
       .catch((error) => {
         //Erro de comunicação do fetch com a api
-        setError('Ops! Tente novamente mais tarde.')
       });
   };
 
