@@ -1,25 +1,34 @@
 import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import  useFormLogin  from './loginForm'; 
+
+import logo from '../../img/logo.png'
+import styles from './login-signup.module.css'
 
 
 const Login = () => {
   const { handleChange, handleSubmit, error } = useFormLogin();
   const navigate = useNavigate();
   return (
-    <main className='main'>
-      <form className='login-page'>
-        <h2 className='login-title'>Login</h2>
-        <label className='login-labels'>Email</label>
-        <input className='login-input' type='email' name='email' autoComplete='off' onChange={handleChange}/>
-        <label className='login-labels'>Senha</label>
-        <input className='login-input' type='password' name='password' onChange={handleChange}/>
-        <span className='errors-message'>{error}</span>
-        <button className='login-button draw' onClick={handleSubmit}>Logar</button>
-        <p className='new-user'>Não possui cadastro?</p>
-        <button className='login-button draw' onClick={() => { navigate('/signup') }}>Cadastre-se</button>
-      </form>
-    </main>
+    <div className={styles.root}>
+      <main className={styles.main}>
+        <picture>
+          <img src={logo} alt='Logo Vai Dar Bom' className={styles.logo} />
+        </picture>
+        <form>
+          <h2 className={styles.formTitle}>Login</h2>
+          <input className={styles.inputForm} type='email' name='email' placeholder='E-mail' autoComplete='off' onChange={handleChange}/>
+          <input className={styles.inputForm} type='password' name='password' placeholder='Senha' onChange={handleChange}/>
+          <span className={styles.errorMessage}>{error}</span>
+          <button className={styles.btnLogin} onClick={handleSubmit}>Entrar</button>
+          <div className={styles.gotToRegistration}>
+            <p className={styles.textGotToRegistration}>Não possui cadastro?</p>
+            <button className={styles.gotToRegisterButton} onClick={() => { navigate('/signup') }}>Cadastre-se</button>
+          </div>
+        </form>
+      </main>
+    </div>
   );  
 };
 

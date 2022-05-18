@@ -2,15 +2,16 @@ import { useState } from 'react';
 import { loginUser } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
 import { createTokenAndRole } from '../../services/localStorage';
-//import { apiResponse } from '../../services/validate';
 
 
 const useFormLogin = () => {
-  const [error, setError] = useState('')
+  const [error, setError] = useState('');
   const [items, setItems] = useState({
     email: '',
     password: '',
   });
+  
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     return setItems(() => {
@@ -20,8 +21,6 @@ const useFormLogin = () => {
     });
   };
 
-  const navigate = useNavigate();
-
   const handleSubmit = (e) => {
     e.preventDefault();
     loginUser('/auth', items)
@@ -30,10 +29,10 @@ const useFormLogin = () => {
         case 200:
           return res.json();
         case 400:
-          console.log('E-mail e/ou senha inválidos!');
           setError('E-mail e/ou senha inválidos!')
           break;
         default:
+          setError('Ops! Tente novamente mais tarde.')
       }
     })
       .then((data) => {
@@ -47,6 +46,7 @@ const useFormLogin = () => {
       })
       .catch((error) => {
         //Erro de comunicação do fetch com a api
+        setError('Ops! Tente novamente mais tarde.')
       });
   };
 

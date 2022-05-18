@@ -11,7 +11,7 @@ export const createUser = (endpoint, items) => {
       email: items.email,
       password: items.password,
       role: items.role,
-      restaurant: "Burguer Queen",
+      restaurant: "Vai Dar Bom!",
     }),
   });
 };

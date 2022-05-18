@@ -5,7 +5,7 @@ const useProducts = () => {
   const [products, setProducts] = useState([]);
   const [productsType, setProductsType] = useState();
   const [flavor, setFlavor] = useState();
-  const [complement, setComplement] = useState();
+  const [complement, setComplement] = useState('');
   const [items, setItems] = useState([]);
 
   const getData = async () => {
@@ -39,19 +39,15 @@ const useProducts = () => {
     if(productsType === 'breakfast') {
       return products.filter((elem) => elem.type === 'breakfast')
     } else if( productsType === 'hamburguer') {
-      if(flavor === 'carne') {
-        return products.filter((elem) => elem.flavor === 'carne')
-      } else if(flavor === 'frango') {
-        return products.filter((elem) => elem.flavor === 'frango')
-      } else if(flavor === 'vegetariano') {
-        return products.filter((elem) => elem.flavor === 'vegetariano')
+      let filterHamburguer = products.filter((elem) => elem.flavor === flavor);
+      if(complement !== '') {
+        filterHamburguer = filterHamburguer.filter((elem) => elem.complement === complement)
       }
+      return filterHamburguer;
       // return products.filter((elem) => elem.sub_type === 'hamburguer')
-      return products.filter((elem) => elem.id === 33 || elem.id === 42)
-    } else if( productsType === 'side') {
-      return products.filter((elem) => elem.sub_type === 'side')
-    } else if( productsType === 'drinks') {
-      return products.filter((elem) => elem.sub_type === 'drinks')
+      // return products.filter((elem) => elem.id === 33 || elem.id === 42)
+    } else if( productsType === 'side' || productsType === 'drinks') {
+      return products.filter((elem) => elem.sub_type === productsType)
     }
     console.log(products)
     return []
