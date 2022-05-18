@@ -22,7 +22,7 @@
 
 .main {
   height: 25rem;
-  width: 22rem;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
