@@ -53,4 +53,13 @@ ul {
 
 .infoPedido {
   font-size: 0.87rem;
+  margin-left: 1rem;
+}
+
+.cifrao {
+  margin-right: 1rem;
+}
+
+.divPedido {
+  display: inline-flex;
 }

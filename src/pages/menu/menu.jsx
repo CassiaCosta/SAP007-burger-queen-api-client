@@ -1,6 +1,7 @@
 import  useProducts  from './useProducts'; 
 import ProductCards from '../../components/productInfos';
 import Cart from '../../components/cart';
+import ResultPrice from '../../components/resultPrice';
 
 import logo from '../../img/logo.png';
 import styles from './menu.module.css';
@@ -15,6 +16,9 @@ const Menu = () => {
     handleSelectFlavor,
     handleSelectComplement,
     handleAddItem,
+    handleSendToKitchen,
+    handleOrderChange,
+    total,
     items
   } = useProducts();
 
@@ -74,8 +78,8 @@ const Menu = () => {
               <h3>Pedido</h3>
             </div>
             <div className={styles.infosCliente}>
-              <input className={styles.nameCliente} type='text' placeholder='Nome do cliente' name='client' autoComplete='off'/>
-              <select className={styles.mesaCliente} defaultValue={'0'} autoComplete='off' name='table'>
+              <input className={styles.nameCliente} type='text' placeholder='Nome do cliente' name='client' autoComplete='off' onChange={handleOrderChange} />
+              <select className={styles.mesaCliente} defaultValue={'0'} autoComplete='off' name='table' onChange={handleOrderChange}>
                 <option value='0'>Selecionar mesa</option>
                 <option value='1'>Mesa 1</option>
                 <option value='2'>Mesa 2</option>
@@ -107,9 +111,9 @@ const Menu = () => {
             <section className={styles.final}>
               <div className={styles.totalPedido}>
                 <h4>SUB-TOTAL</h4>
-                <p>R$ 34,00</p>
+                <ResultPrice value={total} />
               </div>
-              <button className={styles.finalizarPedido}>Finalizar pedido</button>
+              <button className={styles.finalizarPedido} onClick={handleSendToKitchen}>Finalizar pedido</button>
             </section>
           </section>
         </section>

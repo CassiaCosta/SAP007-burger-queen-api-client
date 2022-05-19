@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "../../services/api";
+import { getProducts, sendOrder } from "../../services/api";
+import { getRole } from '../../services/localStorage.js'
 
 const useProducts = () => {
   const [products, setProducts] = useState([]);
@@ -7,6 +8,8 @@ const useProducts = () => {
   const [flavor, setFlavor] = useState();
   const [complement, setComplement] = useState('');
   const [items, setItems] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [orderInfo, setOrderInfo] = useState({ client: '', table: '' });
 
   const getData = async () => {
     const data = await getProducts('/products');
@@ -53,6 +56,37 @@ const useProducts = () => {
     return []
   }
 
-  return { handleButtonTypeClick, productsFiltered, productsType, handleSelectFlavor, handleSelectComplement, handleAddItem, items }
+  useEffect(() => {
+    const sum = (previousValue, currentValue) => previousValue + currentValue;
+    setTotal(() => {
+      const price = items.map((elem) => elem.qtd * elem.price);
+      return price.reduce(sum, 0);
+    })
+  }, [items]);
+
+  const handleOrderChange = (e) => {
+    return setOrderInfo(() => {
+      const auxValues = { ...orderInfo };
+      auxValues[e.target.name] = e.target.value;
+      return auxValues;
+    });
+  };
+
+  const handleSendToKitchen = () => {
+    if (getRole() === 'attendent') {
+      sendOrder('/orders', orderInfo, items)
+        .then((res => res.json()))
+        .then((data) => {
+          if (data.code === 400) {
+            console.log('Preencha os campos com as informações do cliente');
+          } else {
+            console.log('Pedido enviado para a cozinha com sucesso');
+            setItems([]);
+          }
+        });
+    }
+  };
+
+  return { handleButtonTypeClick, productsFiltered, productsType, handleSelectFlavor, handleSelectComplement, handleAddItem, items, handleSendToKitchen, handleOrderChange,total }
 };
 export default useProducts;
