@@ -1,6 +1,6 @@
 .root::before {
   content: '';
-  background-color: #272829;
+  background-color: var(--background-color-home);
   background-image: url('../../img/Background.jpg');
   background-size: cover;
   top: 0;
