@@ -1,17 +1,17 @@
-import { URL, getToken } from "./localStorage.js";
+import { URL, getToken } from './localStorage.js';
 
 export const createUser = (endpoint, items) => {
   return fetch(`${URL}${endpoint}`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       name: items.name,
       email: items.email,
       password: items.password,
       role: items.role,
-      restaurant: "Vai Dar Bom!",
+      restaurant: 'Vai Dar Bom!',
     }),
   });
 };
@@ -38,7 +38,7 @@ export const getProducts = (endpoint) => {
     },
   })
   .then(res => res.json())
-}
+};
 
 export const sendOrder = (endpoint, orderInfo, items) => {
   return fetch(`${URL}${endpoint}` , {
@@ -53,7 +53,7 @@ export const sendOrder = (endpoint, orderInfo, items) => {
       products: items,  
     })
   })
-}
+};
 
 export const getOrders = (endpoint) => {
   return fetch(`${URL}${endpoint}` , {

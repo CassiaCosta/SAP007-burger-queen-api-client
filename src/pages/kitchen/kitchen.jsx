@@ -1,7 +1,7 @@
-import React from "react";
-import { useEffect } from "react";
-import useKitchen from "./useKitchen.js";
-import OrderCard from "../../components/orderCards";
+import React from 'react';
+import { useEffect } from 'react';
+import useKitchen from './useKitchen.js';
+import OrderCard from '../../components/orderCards';
 
 const Kitchen = () => {
   const {
@@ -18,10 +18,10 @@ const Kitchen = () => {
       return getData();
     }, 50);
     return () => clearInterval(interval);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    if (orderStatus.status === "finalizado") {
+    if (orderStatus.status === 'finalizado') {
       return orderStatus.map((order) => {
         const foundOrder = orders
           .map((elem) => elem)
@@ -34,12 +34,12 @@ const Kitchen = () => {
         return orders;
       });
     }
-  }, [orderStatus]);
+  }, [orderStatus]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <main className="kitchen-main">
+    <main className='kitchen-main'>
       <p>KITCHEN</p>
-      <div className="orders-list">
+      <div className='orders-list'>
         {ordersFiltered().map((elem) => {
           const clientProducts = elem.Products;
           const product = clientProducts.map((product) => product);

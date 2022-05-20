@@ -51,7 +51,6 @@ const useFormSignup = () => {
         }
       })
       .catch((error) => {
-        //Erro de comunicação do fetch com a api
       });
   };
 

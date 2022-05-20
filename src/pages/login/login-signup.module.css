@@ -1,7 +1,7 @@
 .root::before {
   content: '';
   background-color: var(--background-color-home);
-  background-image: url('../../img/Background.jpg');
+  background-image: url('../../img/background.jpg');
   background-size: cover;
   top: 0;
   right: 0;
@@ -68,7 +68,6 @@
 }
 
 .errorMessage {
-  font-size: 0.8rem;
   margin-bottom: 0.5rem;
 }
 
@@ -80,6 +79,7 @@
   background-color: #4b4b4b;
   border: none;
   border-radius: 0.3rem;
+  cursor: pointer;
 }
 
 .btnLogin {
@@ -96,6 +96,12 @@
 .textGotToRegistration {
   font-size: 0.8rem;
   margin-right: 1rem;
+}
+
+.btnRetornLogin {
+  align-self: flex-end;
+  margin-top: 1rem;
+  cursor: pointer;
 }
 
 @media only screen and (min-width:769px) {

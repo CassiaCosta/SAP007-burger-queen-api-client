@@ -8,7 +8,7 @@ const productCards = ({ image, name, price, onClick }) => {
       </section>
       <section className={styles.infos}>
         <picture>
-          <img src={image} alt='Item' className={styles.imageProduct} />
+          <img src={image} alt='Imagem do Produto' className={styles.imageProduct} />
         </picture>
         <div className={styles.btnAndPrice}>
           <p>Preço: R${price}</p>

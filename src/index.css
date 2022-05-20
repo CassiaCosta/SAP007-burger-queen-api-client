@@ -2,6 +2,8 @@
 @import './pages/menu/menu.module.css';
 @import './components/components.module.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
+
 :root {
     --default-font-color: #ffffff;
     --secondy-font-color: #8c8c8c;
@@ -15,7 +17,7 @@
     padding: 0;
     color: var(--default-font-color);
     text-decoration: none;
-    font-family: "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+    font-family: 'Work Sans', sans-serif;
 }
 
 form {

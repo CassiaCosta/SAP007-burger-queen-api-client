@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { getProducts, sendOrder } from "../../services/api";
+import { useEffect, useState } from 'react';
+import { getProducts, sendOrder } from '../../services/api';
 import { getRole } from '../../services/localStorage.js'
 
 const useProducts = () => {

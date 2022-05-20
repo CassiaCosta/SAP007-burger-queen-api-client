@@ -31,7 +31,7 @@ const Menu = () => {
             <MenuHamburguer />
           </div>
           <picture>
-            <img src={logo} alt="Logo Vai Dar Bom" className={styles.logo} />
+            <img src={logo} alt='Logo Vai Dar Bom' className={styles.logo} />
           </picture>
         </nav>
         <section className={styles.attendantTabe}>
