@@ -20,7 +20,8 @@ const Menu = () => {
     handleSendToKitchen,
     handleOrderChange,
     total,
-    items
+    items,
+    orderError,
   } = useProducts();
 
   return (
@@ -114,6 +115,7 @@ const Menu = () => {
                 <h4>SUB-TOTAL</h4>
                 <ResultPrice value={total} />
               </div>
+              <p className={styles.orderError}>{orderError}</p>
               <button className={styles.finalizeOrder} onClick={handleSendToKitchen}>Finalizar pedido</button>
             </section>
           </section>

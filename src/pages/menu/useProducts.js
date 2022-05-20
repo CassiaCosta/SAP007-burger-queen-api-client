@@ -10,6 +10,7 @@ const useProducts = () => {
   const [items, setItems] = useState([]);
   const [total, setTotal] = useState(0);
   const [orderInfo, setOrderInfo] = useState({ client: '', table: '' });
+  const [orderError, setOrderError] = useState('');
 
   const getData = async () => {
     const data = await getProducts('/products');
@@ -79,14 +80,28 @@ const useProducts = () => {
         .then((data) => {
           if (data.code === 400) {
             console.log('Preencha os campos com as informações do cliente');
+            setOrderError('Preencher nome e mesa do cliente')
           } else {
             console.log('Pedido enviado para a cozinha com sucesso');
             setItems([]);
+            setOrderInfo('');
           }
         });
     }
   };
 
-  return { handleButtonTypeClick, productsFiltered, productsType, handleSelectFlavor, handleSelectComplement, handleAddItem, items, handleSendToKitchen, handleOrderChange,total }
+  return {
+    handleButtonTypeClick,
+    productsFiltered,
+    productsType,
+    handleSelectFlavor,
+    handleSelectComplement,
+    handleAddItem,
+    items,
+    handleSendToKitchen,
+    handleOrderChange,
+    total,
+    orderError,
+  }
 };
 export default useProducts;

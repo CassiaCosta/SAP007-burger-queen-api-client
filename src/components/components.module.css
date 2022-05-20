@@ -1,8 +1,9 @@
 /* CARRINHO DE PEDIDOS */
 .order {
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
+  align-items: center;
 }
 
 .orderContainer {
@@ -12,6 +13,15 @@
 .orderInformation {
   font-size: 0.87rem;
   margin-left: 1rem;
+}
+
+.priceContainerAndDelete {
+  display: flex;
+  align-items: center;
+}
+
+.deleteItem {
+  margin-left: 0.5rem;
 }
 
 /* MENU HAMBURGUER */
@@ -85,7 +95,8 @@
   font-weight: 600;
 }
 
-.hamburguerMenuListItems li button {
+.hamburguerMenuListItems li button,
+.deleteItem {
   border: none;
   background: transparent;
 }
@@ -177,6 +188,83 @@ ul {
   background-color: var(--secondy-font-color);
   border: none;
   margin-bottom: 0.25rem;
+}
+
+/* CARDS DOS PEDIDOS / COZINHA */
+.orderCardOrganization {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.orderHeader {
+  height: 4rem;
+  background-color: var(--background-cards);
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 2px 2px 2px var(--default-background);
+}
+
+.orderCustomer,
+.orderInformation {
+  height: 80%;
+  font-size: 0.95rem;
+  display: grid;
+  align-items: center;
+}
+
+.orderInformation {
+  justify-items: end;
+}
+
+.orderItemList {
+  padding: 1rem 0.5rem;
+}
+
+.orderItemPlaced {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.orderItemPlaced p {
+  margin-right: 0.7rem;
+}
+
+.orderFooter {
+  height: 2rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.orderStatus {
+  height: 100%;
+  width: 50%;
+  color: #8c8c8c;
+  font-style: italic;
+  border-radius: 0.3rem;
+  background-color: var(--background-cards);
+  padding: 0 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px var(--default-background);
+}
+
+.kitchenChefButton {
+  height: 100%;
+  width: 50%;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: var(--default-green);
+  padding: 0 0.5rem;
+}
+
+.prepared {
+  background-color: var(--default-red);
 }
 
 @media only screen and (min-width:769px) {

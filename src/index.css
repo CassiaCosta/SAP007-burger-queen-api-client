@@ -1,6 +1,7 @@
 @import './pages/login/login-signup.module.css';
 @import './pages/menu/menu.module.css';
 @import './components/components.module.css';
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
 
 :root {
     --default-font-color: #ffffff;
@@ -8,6 +9,8 @@
     --background-cards: #303030;
     --background-color-home: #272829;
     --default-background: #0d0c0c;
+    --default-red: #e23c2e;
+    --default-green: #309746;
 }
 
 * {
@@ -15,7 +18,7 @@
     padding: 0;
     color: var(--default-font-color);
     text-decoration: none;
-    font-family: "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+    font-family: 'Work Sans', sans-serif;
 }
 
 form {
