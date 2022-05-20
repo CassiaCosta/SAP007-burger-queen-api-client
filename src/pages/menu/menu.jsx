@@ -1,4 +1,4 @@
-import  useProducts  from './useProducts'; 
+import useProducts  from './useProducts'; 
 import ProductCards from '../../components/productInfos';
 import Cart from '../../components/cart';
 import ResultPrice from '../../components/resultPrice';

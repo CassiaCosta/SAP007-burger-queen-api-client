@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './components.module.css';
 
 const MenuHamburguer = () => {
   const navigate = useNavigate();
@@ -8,23 +9,23 @@ const MenuHamburguer = () => {
     setMode(!active);
   }
   return (
-    <div>
-      <div className={active ? 'icon iconActive' : 'icon'} onClick={ToggleMode}>
-        <div className="hamburguer hamburguerIcon"></div>
-      </div>
-      <div className={active ? 'menu menuOpen' : 'menu menuClose'}>
-        <div className="list">
-          <ul className="listItems">
+    <>
+      <section className={active ? 'icon iconActive' : 'icon'} onClick={ToggleMode}>
+        <div className='hamburguer hamburguerIcon'></div>
+      </section>
+      <section className={active ? 'menu menuOpen' : 'menu menuClose'}>
+        <div className={styles.hamburguerMenuList}>
+          <ul className={styles.hamburguerMenuListItems}>
             <li>
-              <button>FAZER PEDIDO</button>
+              <button>MENU</button>
             </li>
             <li>
-              <button>EM PREPARO</button>
+              <button>COZINHA</button>
             </li>
             <li>
               <button>PEDIDOS PRONTOS</button>
             </li>
-            <li className='btnBack'>
+            <li className={styles.logoutButton}>
               <button onClick={() => {
                 localStorage.removeItem('token');
                 localStorage.removeItem('role');
@@ -33,8 +34,8 @@ const MenuHamburguer = () => {
             </li>
           </ul>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 

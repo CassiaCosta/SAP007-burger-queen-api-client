@@ -1,23 +1,23 @@
-import React from "react";
-import OrderProducts from "./orderProduct";
+import React from 'react';
+import OrderProducts from './orderProduct';
 
 const nameButton = (status) => {
-  if (status === "pending") {
-    return "Iniciar preparo";
-  } else if (status === "preparando") {
-    return "Finalizar preparo";
+  if (status === 'pending') {
+    return 'Iniciar preparo';
+  } else if (status === 'preparando') {
+    return 'Finalizar preparo';
   } else {
-    return "Servir pedido";
+    return 'Servir pedido';
   }
 };
 
 const initialStatus = (status) => {
-  if (status === "pending") {
-    return "Pendente";
-  } else if (status === "preparando") {
-    return "Preparando";
+  if (status === 'pending') {
+    return 'Pendente';
+  } else if (status === 'preparando') {
+    return 'Preparando';
   } else {
-    return "Finalizado";
+    return 'Finalizado';
   }
 };
 
@@ -26,24 +26,18 @@ const OrderCard = ({
   name,
   table,
   status,
-  createdAt,
-  updatedAt,
   onClick,
   products,
 }) => (
-  <div className="order-card">
-    <div className="order-header">Pedido N°{id}</div>
-    <div className="cards-info">
-      {/* <TimeOrInterval createdAt={createdAt} updatedAt={updatedAt} status={status} /> */}
-      Nome:
-      <p className="order-info">{name}</p>
-      Mesa:
-      <p className="order-info">{table}</p>
-      Status:
-      <p className="order-info">{initialStatus(status)}</p>
+  <section className='order-card'>
+    <p className='order-header'>Pedido N°{id}</p>
+    <div className='cards-info'>
+      <p className='order-info'>Nome: {name}</p>
+      <p className='order-info'>Mesa: {table}</p>
+      <p className='order-info'>Status: {initialStatus(status)}</p>
       Itens:
     </div>
-    <div className="order-products">
+    <div className='order-products'>
       {products.map((elem) => {
         return (
           <OrderProducts
@@ -56,10 +50,10 @@ const OrderCard = ({
         );
       })}
     </div>
-    <button className="order-button" onClick={onClick}>
+    <button className='order-button' onClick={onClick}>
       {nameButton(status)}
     </button>
-  </div>
+  </section>
 );
 
 export default OrderCard;

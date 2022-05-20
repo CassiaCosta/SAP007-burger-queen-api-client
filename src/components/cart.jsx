@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 import styles from './components.module.css';
 
 const Cart = ({ name, flavor, complement, price, qtd, type }) => {
   return (
-    <li className={styles.pedido}>
-      <div className={styles.divPedido}>
+    <li className={styles.order}>
+      <div className={styles.orderContainer}>
         <p>{qtd}</p>
-        <div className={styles.infoPedido}>
+        <div className={styles.orderInformation}>
           <h4>{name}</h4>
           {type === 'hamburguer' ? (
             <section>
-              <p value="sabor">- {flavor}</p>
-              <p name="complemento">- {`${complement !== null ? complement : ""}`}</p>
+              <p value='sabor'>- {flavor}</p>
+              <p name='complemento'>- {`${complement !== null ? complement : ''}`}</p>
             </section>
           ) : ''}
         </div>
