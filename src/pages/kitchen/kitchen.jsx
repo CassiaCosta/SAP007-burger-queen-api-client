@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import useKitchen from "./useKitchen";
+import useKitchen from "./useKitchen.js";
 import OrderCard from "../../components/orderCards";
 
 const Kitchen = () => {

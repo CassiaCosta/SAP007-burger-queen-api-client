@@ -73,7 +73,7 @@ const useProducts = () => {
   };
 
   const handleSendToKitchen = () => {
-    if (getRole() === 'attendent') {
+    if (getRole() === 'attendant') {
       sendOrder('/orders', orderInfo, items)
         .then((res => res.json()))
         .then((data) => {

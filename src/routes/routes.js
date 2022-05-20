@@ -6,22 +6,6 @@ import Menu from '../pages/menu/menu.jsx';
 import PrivateRoute from './privateRoute';
 import Kitchen from '../pages/kitchen/kitchen.jsx';
 
-// const AllRoutes = () => {
-//   return (
-//     <Router>
-//       <div>
-//         <Routes>
-//           <Route path='/' element={<Login />} />
-//           <Route path='/login' element={<Login />} />
-//           <Route path='/signup' element={<SignUp />} />
-//           <Route path='/menu' element={<Menu />} />
-//           <Route path='/kitchen' element={<Kitchen />} />
-//         </Routes>
-//       </div>
-//     </Router>
-//   );
-// }
-
 const AllRoutes = () => {
   return (
     <Router>
@@ -30,10 +14,11 @@ const AllRoutes = () => {
           <Route path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
-          <Route path='/menu' element={<Menu />} />
-          <Route path='/kitchen' element={<Kitchen />} />
           <Route path='/menu' element={<PrivateRoute redirectTo="/">
             <Menu /> 
+          </PrivateRoute>} />
+          <Route path='/kitchen' element={<PrivateRoute redirectTo="/">
+            <Kitchen /> 
           </PrivateRoute>} />
           </Routes>
       </div>

@@ -1,6 +1,6 @@
 import styles from './components.module.css';
 
-const productCards = ({ image, name, flavor, complement, price, onClick }) => {
+const productCards = ({ image, name, price, onClick }) => {
   return (
     <li className={styles.card}>
       <section>

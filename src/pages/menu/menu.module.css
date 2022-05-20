@@ -10,17 +10,17 @@
 }
 
 .navBar {
-  background-color: var(--default-background);
-  width: 100%;
   height: 4rem;
+  width: 100%;
+  background-color: var(--default-background);
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .menuHamburguer {
+  height: 3.125rem;
   list-style-type: none;
-  margin-left: 1rem;
 }
 
 .logo {
@@ -29,131 +29,155 @@
   margin-right: 1rem;
 }
 
-.abaAtendente {
+.attendantTabe {
+  height: 84vh;
   margin: 0.5rem;
   display: flex;
-  height: 84vh;
 }
 
-.sectionMenu {
+.orderingTab {
   width: 60%;
 }
 
-.selects {
+.orderSelection {
+  height: 2rem;
+  border: 0.1rem solid var(--secondy-font-color);
+  border-radius: 0.3rem;
+  box-shadow: .125rem .125rem .125rem var(--default-background);
+  display: flex;
+  justify-content: space-around;
+}
+
+.selectionButton {
+  border: none;
+  background: transparent;
+}
+
+.flavorAndComplementSelection {
+  width: 55%;
   margin-top: 0.3rem;
   display: inline-flex;
-  width: 55%;
   justify-content: space-between;
 }
 
-.selectComplement {
-  display: inline-flex;
-  width: 55%;
-  align-items: center;
-  font-size: 0.9rem;
+.selectFlavor {
+  width: 6rem;
+  border: none;
+  background: none;
+  outline: none;
 }
 
-.complementQueijo,
-.complementOvo {
+.selectComplement {
+  width: 55%;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.cheeseComplement,
+.eggComplement {
   margin-right: 0.3rem;
 }
 
-.complementOvo {
+.eggComplement {
   margin-left: 0.5rem;
 }
 
-.selectFlavor {
-  background: none;
-  border: none;
-  outline: none;
-  width: 6rem;
+.productList {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.5rem;
 }
 
-.sectionPedido {
+.orderSection {
   width: 38%;
   margin-left: 1rem;
 }
 
-.selectionMenu {
-  border: 0.1rem solid var(--secondy-font-color);
-  border-radius: 0.3rem;
-  height: 2rem;
-  display: flex;
-  justify-content: space-around;
-  box-shadow: 2px 2px 2px var(--default-background);
-}
-
-.sectionPedidoTitle {
+.orderSectionTitle {
   height: 2.2rem;
   border-radius: 0.3rem;
   background-color: var(--background-cards);
+  padding-left: 0.5rem;
   box-shadow: 2px 2px 2px var(--default-background);
   display: flex;
   align-items: center;
-  padding-left: 0.5rem;
 }
 
-.totalPedido {
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--background-color-home);
-  align-items: center;
-  height: 2rem;
-  border: 0.1rem solid var(--secondy-font-color);
-  border-radius: 0.3rem;
-  padding: 0 0.5rem;
-}
-
-.final {
-  position: fixed;
-  bottom: 12px;
-  width: 37.2%;
-}
-
-.infosCliente {
-  display: inline-flex;
+.clientInformation {
+  width: 100%;
   margin-top: 0.3rem;
+  display: inline-flex;
 }
 
-.nameCliente,
-.mesaCliente {
-  background: transparent;
+.clientName,
+.clientTable {
   border: 0.1rem solid var(--secondy-font-color);
-  outline: none;
   border-radius: 0.3rem;
+  background: transparent;
+  outline: none;
 }
 
-.mesaCliente option,
+.clientName {
+  height: 2rem;
+  width: 100%;
+  padding-left: 0.5rem;
+  margin-right: 0.4rem;
+}
+
+.clientTable option,
 .selectFlavor option {
   background: var(--background-cards);
 }
 
-.nameCliente {
-  margin-right: 0.4rem;
-  height: 2rem;
-  width: 100%;
-  padding-left: 0.5rem;
+.finalization {
+  width: 37.2%;
+  position: fixed;
+  bottom: 12px;
 }
 
-.finalizarPedido {
+.totalOrder {
   height: 2rem;
+  border: 0.1rem solid var(--secondy-font-color);
+  border-radius: 0.3rem;
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--background-color-home);
+  align-items: center;
+}
+
+.finalizeOrder {
+  height: 2rem;
+  width: 100%;
   border: none;
   border-radius: 0.3rem;
   padding: 0 0.5rem;
-  width: 100%;
   margin-top: 0.5rem;
   background-color: var(--background-cards);
   box-shadow: 2px 2px 2px var(--default-background);
 }
 
-.buttonMenu {
-  background: transparent;
-  border: none;
-}
-
-.listProducts {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 0.5rem;
-  margin-top: 1rem;
+@media only screen and (min-width:769px) {
+  .orderSelection {
+    height: 3rem;
+  }
+  .selectionButton {
+    font-size: 1.3rem;
+  }
+  .productList {
+    margin-top: 2rem;
+    grid-template-columns: auto auto auto;
+  }
+  .flavorAndComplementSelection {
+    margin-top: 1rem;
+  }
+  .selectFlavor,
+  .selectComplement {
+    font-size: 1rem;
+  }
+  .orderSectionTitle {
+    height: 3.2rem;
+  }
 }

@@ -40,7 +40,7 @@ const useFormSignup = () => {
         }
       })
       .then((data) => {
-        if (data.role === "attendent") {
+        if (data.role === "attendant") {
           createTokenAndRole(data.token, data.role);
           loginUser("/auth", data);
           navigate("/menu");

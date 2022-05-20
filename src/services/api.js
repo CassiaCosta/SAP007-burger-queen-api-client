@@ -40,7 +40,7 @@ export const getProducts = (endpoint) => {
   .then(res => res.json())
 }
 
-export const sendOrder = (endpoint, orderInfo, addItem) => {
+export const sendOrder = (endpoint, orderInfo, items) => {
   return fetch(`${URL}${endpoint}` , {
     method: 'POST',
     headers: {
@@ -50,7 +50,7 @@ export const sendOrder = (endpoint, orderInfo, addItem) => {
     body: JSON.stringify({
       client: orderInfo.client,
       table: orderInfo.table,
-      products: addItem,  
+      products: items,  
     })
   })
 }

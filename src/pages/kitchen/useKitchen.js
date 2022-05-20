@@ -6,16 +6,16 @@ const useKitchen = () => {
   const [orders, setOrders] = useState([]);
   const [orderStatus, setOrderStatus] = useState([]);
 
-  const sortById = (data) => {
-    return data.sort((a, b) => {
-      return b.id - a.id;
-    });
-  };
-
   const getData = () => {
     getOrders("/orders")
       .then((data) => sortById(data))
       .then((newData) => setOrders(newData));
+  };
+
+  const sortById = (data) => {
+    return data.sort((a, b) => {
+      return b.id - a.id;
+    });
   };
 
   const ordersFiltered = () => {
