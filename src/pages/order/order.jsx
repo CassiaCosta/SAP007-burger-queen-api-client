@@ -1,22 +1,12 @@
-import React from "react";
 import { useEffect } from "react";
-import useKitchen from "./useKitchen.js";
+import useOrder from "./useOrder.js";
 import OrderCard from "../../components/orderCards";
-import styles from './kitchen-order.module.css';
+import styles from '../kitchen/kitchen-order.module.css';
 import MenuHamburguer from "../../components/menuHamburguer.jsx";
 import logo from '../../img/logo.png';
 
-const Kitchen = () => {
-  const {
-    setOrders,
-    getData,
-    ordersFiltered,
-    handleStatus,
-    orders,
-    orderStatus,
-    error,
-  } = useKitchen();
-
+const Order = () => {
+  const { getData, ordersFiltered, handleStatus, error } = useOrder();
   useEffect(() => {
     const interval = setInterval(() => {
       return getData();
@@ -24,35 +14,19 @@ const Kitchen = () => {
     return () => clearInterval(interval);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  useEffect(() => {
-    if (orderStatus.status === "finalizado") {
-      return orderStatus.map((order) => {
-        const foundOrder = orders
-          .map((elem) => elem)
-          .findIndex((item) => item.id === order.id);
-        if (foundOrder !== -1) {
-          const removed = orders;
-          removed.splice(foundOrder, 1);
-          setOrders([...removed]);
-        }
-        return orders;
-      });
-    }
-  }, [orderStatus]); // eslint-disable-line react-hooks/exhaustive-deps
-
   return (
     <div className={styles.root}>
       <main>
         <nav>
-          <section className={styles.navBar}>
-            <div className={styles.menuHamburguer}>
-              <MenuHamburguer />
-            </div>
-            <picture>
-              <img src={logo} alt="Logo Vai Dar Bom" className={styles.logo} />
-            </picture>
-          </section>
-        </nav>
+            <section className={styles.navBar}>
+              <div className={styles.menuHamburguer}>
+                <MenuHamburguer />
+              </div>
+              <picture>
+                <img src={logo} alt="Logo Vai Dar Bom" className={styles.logo} />
+              </picture>
+            </section>
+          </nav>
         <ul className={styles.wishList}>
           {ordersFiltered().map((elem) => {
             const clientProducts = elem.Products;
@@ -65,7 +39,9 @@ const Kitchen = () => {
                   table={elem.table}
                   status={elem.status}
                   createdAt={elem.createdAt}
+                  updatedAt={elem.updatedAt}
                   onClick={() => handleStatus(elem)}
+                  nameButton={"Servir pedido"}
                   products={product}
                   error={error}
                 />
@@ -77,4 +53,4 @@ const Kitchen = () => {
     </div>
   );
 };
-export default Kitchen;
+export default Order;

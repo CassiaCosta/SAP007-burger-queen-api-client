@@ -93,9 +93,15 @@
   align-items: center;
 }
 
-.textGotToRegistration {
-  font-size: 0.8rem;
+.textGotToRegistration,
+.textGotToLogin {
+  font-size: 0.75rem;
   margin-right: 1rem;
+}
+
+.textGotToLogin {
+  background: none;
+  border: none;
 }
 
 @media only screen and (min-width:769px) {

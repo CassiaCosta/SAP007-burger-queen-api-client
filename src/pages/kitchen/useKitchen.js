@@ -1,13 +1,14 @@
-import { useState } from "react";
-import { getOrders, updateOrderStatus } from "../../services/api";
-import { getRole } from "../../services/localStorage.js";
+import { useState } from 'react';
+import { getOrders, updateOrderStatus } from '../../services/api';
+import { getRole } from '../../services/localStorage.js';
 
 const useKitchen = () => {
   const [orders, setOrders] = useState([]);
   const [orderStatus, setOrderStatus] = useState([]);
+  const [error, setError] = useState('');
 
   const getData = () => {
-    getOrders("/orders")
+    getOrders('/orders')
       .then((data) => sortById(data))
       .then((newData) => setOrders(newData));
   };
@@ -20,35 +21,35 @@ const useKitchen = () => {
 
   const ordersFiltered = () => {
     return orders.filter(
-      (item) => item.status === "pending" || item.status === "preparando"
+      (item) => item.status === 'pending' || item.status === 'preparando'
     );
   };
 
   const handleStatus = (elem) => {
-    if (getRole() === "chef") {
-      if (elem.status === "pending") {
-        updateOrderStatus("/orders/", elem.id, "preparando").then(() =>
+    if (getRole() === 'chef') {
+      if (elem.status === 'pending') {
+        updateOrderStatus('/orders/', elem.id, 'preparando').then(() =>
           setOrderStatus([
             ...orderStatus,
             {
               id: elem.id,
-              status: "preparando",
+              status: 'preparando',
             },
           ])
         );
-      } else if (elem.status === "preparando") {
-        updateOrderStatus("/orders/", elem.id, "finalizado").then(() =>
+      } else if (elem.status === 'preparando') {
+        updateOrderStatus('/orders/', elem.id, 'finalizado').then(() =>
           setOrderStatus([
             ...orderStatus,
             {
               id: elem.id,
-              status: "finalizado",
+              status: 'finalizado',
             },
           ])
         );
       }
     } else {
-      console.log("Apenas um(a) chef pode iniciar/finalizar um pedido");
+      setError('Apenas o(a) chef pode atualizar um pedido');
     }
   };
 
@@ -59,6 +60,7 @@ const useKitchen = () => {
     getData,
     ordersFiltered,
     handleStatus,
+    error,
   };
 };
 export default useKitchen;

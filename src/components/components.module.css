@@ -267,6 +267,11 @@ ul {
   background-color: var(--default-red);
 }
 
+.errorMessage {
+  font-size: 0.7rem;
+  background-color: var(--default-red);
+}
+
 @media only screen and (min-width:769px) {
   .menu.menuOpen {
     height: 89.7vh;

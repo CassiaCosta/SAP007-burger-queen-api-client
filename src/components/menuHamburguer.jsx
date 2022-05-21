@@ -19,15 +19,15 @@ const MenuHamburguer = () => {
           <ul className={styles.hamburguerMenuListItems}>
             {getRole() === 'attendant' ? (
               <li>
-                <button>MENU</button>
+                <button onClick={() => { navigate('/menu') }}>MENU</button>
               </li>
             ) : (
               <li>
-                <button>COZINHA</button>
+                <button onClick={() => { navigate('/kitchen') }}>COZINHA</button>
               </li>
             )}
             <li>
-              <button>PEDIDOS PRONTOS</button>
+              <button onClick={() => { navigate('/order') }}>PEDIDOS PRONTOS</button>
             </li>
             <li className={styles.logoutButton}>
               <button onClick={() => {

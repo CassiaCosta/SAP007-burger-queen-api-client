@@ -4,10 +4,10 @@ import { getRole } from '../../services/localStorage.js'
 
 const useProducts = () => {
   const [products, setProducts] = useState([]);
+  const [items, setItems] = useState([]);
   const [productsType, setProductsType] = useState('breakfast');
   const [flavor, setFlavor] = useState();
   const [complement, setComplement] = useState('');
-  const [items, setItems] = useState([]);
   const [total, setTotal] = useState(0);
   const [orderInfo, setOrderInfo] = useState({ client: '', table: '' });
   const [orderError, setOrderError] = useState('');
@@ -23,13 +23,11 @@ const useProducts = () => {
 
   const handleButtonTypeClick = (e) => {
     setProductsType(e.target.value);
-    console.log(e.target.value)
   }
   const handleSelectFlavor = (e) => setFlavor(e.target.value);
   const handleSelectComplement = (e) => setComplement(e.target.value);
 
   const handleAddItem = (product) => {
-    console.log(product)
     const productIndex = items.findIndex((item) => item.id === product.id)
     if(productIndex === -1) {
       setItems([...items, {...product, qtd: 1}])
@@ -57,6 +55,32 @@ const useProducts = () => {
     return []
   }
 
+  const handleDeleteProducts = (elem) => {
+    const foundItem = items.findIndex((item) => item.id === elem.id);
+    if (foundItem !== -1) {
+      const qtd = items[foundItem].qtd
+      if (qtd === 1) {
+        const removed = items
+        removed.splice(foundItem, 1)
+        setItems([...removed])
+      } else {
+        const newArr = items;
+        newArr[foundItem].qtd--;
+        setItems([...newArr])
+      }
+    } else {
+      setItems(
+        [...items,
+        {
+          id: elem.id,
+          qtd: elem.qtd,
+          name: elem.name,
+          price: elem.price,
+          flavor: elem.flavor
+        }]);
+    }
+  };
+
   useEffect(() => {
     const sum = (previousValue, currentValue) => previousValue + currentValue;
     setTotal(() => {
@@ -79,12 +103,9 @@ const useProducts = () => {
         .then((res => res.json()))
         .then((data) => {
           if (data.code === 400) {
-            console.log('Preencha os campos com as informações do cliente');
             setOrderError('Preencher nome e mesa do cliente')
           } else {
-            console.log('Pedido enviado para a cozinha com sucesso');
             setItems([]);
-            setOrderInfo('');
           }
         });
     }
@@ -93,13 +114,14 @@ const useProducts = () => {
   return {
     handleButtonTypeClick,
     productsFiltered,
-    productsType,
-    handleSelectFlavor,
-    handleSelectComplement,
     handleAddItem,
-    items,
+    handleSelectFlavor,
+    handleDeleteProducts,
+    handleSelectComplement,
     handleSendToKitchen,
     handleOrderChange,
+    productsType,
+    items,
     total,
     orderError,
   }
