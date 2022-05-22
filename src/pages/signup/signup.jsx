@@ -1,8 +1,7 @@
-import React from 'react';
+// import React from 'react';
 
 import useFormSignup from './useSignupForm';
 import { useNavigate } from 'react-router-dom';
-
 
 import logo from '../../img/logo.png'
 import styles from '../login/login-signup.module.css'
@@ -10,7 +9,6 @@ import styles from '../login/login-signup.module.css'
 const SignUp = () => {
   const { handleChange, handleSubmit, error } = useFormSignup();
   const navigate = useNavigate();
-
   return (
     <div className={styles.root}>
       <main className={styles.main}>
@@ -31,7 +29,7 @@ const SignUp = () => {
             </select>
             <button className={styles.btnRegister} type='submit' onClick={handleSubmit}>Cadastrar</button> 
           </div>
-          <p className={styles.btnRetornLogin} onClick={() => { navigate('/login') }}> Voltar ao Login</p> 
+          <button className={styles.btnRetornLogin} onClick={() => { navigate('/login') }}> Voltar ao Login</button> 
         </form>
       </main>
     </div>

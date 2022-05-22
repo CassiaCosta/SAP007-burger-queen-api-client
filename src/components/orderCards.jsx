@@ -1,25 +1,40 @@
 import React from 'react';
 import OrderProducts from './orderProduct';
+import styles from './components.module.css';
+import { TimeOrInterval } from './time/time';
+import { PreparationTime } from './time/preparationTime';
+import { initialStatus } from "./time/date";
+
 
 const nameButton = (status) => {
   if (status === 'pending') {
-    return 'Iniciar preparo';
+    return 'Preparar';
   } else if (status === 'preparando') {
-    return 'Finalizar preparo';
+    return 'Finalizar';
   } else {
-    return 'Servir pedido';
+    return 'Servir';
   }
 };
 
-const initialStatus = (status) => {
+const colorClass = (status) => {
   if (status === 'pending') {
-    return 'Pendente';
+    return '';
   } else if (status === 'preparando') {
-    return 'Preparando';
+    return 'prepared';
   } else {
-    return 'Finalizado';
+    return 'finish';
   }
 };
+
+// const initialStatus = (status) => {
+//   if (status === 'pending') {
+//     return 'Pendente';
+//   } else if (status === 'preparando') {
+//     return 'Preparando';
+//   } else {
+//     return 'Finalizado';
+//   }
+// };
 
 const OrderCard = ({
   id,
@@ -27,32 +42,50 @@ const OrderCard = ({
   table,
   status,
   onClick,
+  createdAt,
+  updatedAt,
   products,
+  error,
 }) => (
-  <section className='order-card'>
-    <p className='order-header'>Pedido N°{id}</p>
-    <div className='cards-info'>
-      <p className='order-info'>Nome: {name}</p>
-      <p className='order-info'>Mesa: {table}</p>
-      <p className='order-info'>Status: {initialStatus(status)}</p>
-      Itens:
-    </div>
-    <div className='order-products'>
-      {products.map((elem) => {
-        return (
-          <OrderProducts
-            key={elem.id}
-            qtd={elem.qtd}
-            name={elem.name}
-            flavor={elem.flavor}
-            complement={elem.complement}
+  <section className={styles.orderCardOrganization}>
+    <div>
+      <section className={styles.orderHeader}>
+        <div className={styles.orderCustomer}>
+          <p>Mesa: {table}</p>
+          <p>{name}</p>
+        </div>
+        <div className={styles.orderInformation}>
+          <p>Pedido N°{id}</p>
+          <TimeOrInterval
+            createdAt={createdAt}
           />
-        );
-      })}
+        </div>
+      </section>
+      <section className={styles.orderItemList}>
+        {products.map((elem) => {
+          return (
+            <OrderProducts
+              key={elem.id}
+              qtd={elem.qtd}
+              name={elem.name}
+              flavor={elem.flavor}
+              complement={elem.complement}
+            />
+          );
+        })}
+      </section>
     </div>
-    <button className='order-button' onClick={onClick}>
-      {nameButton(status)}
-    </button>
+    <section>
+      <PreparationTime
+       createdAt={createdAt}
+       updatedAt={updatedAt}
+        />
+      <p className={styles.errorMessage}>{error}</p>
+      <div className={styles.orderFooter}>
+        <p className={styles.orderStatus}>{initialStatus(status)}</p>
+        <button className={`kitchenChefButton ${colorClass(status)}`} onClick={onClick}> {nameButton(status)} </button>
+      </div>
+    </section>
   </section>
 );
 

@@ -1,10 +1,11 @@
-import React from 'react';
+// import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from '../pages/login/login.jsx';
 import SignUp from '../pages/signup/signup.jsx';
 import Menu from '../pages/menu/menu.jsx';
-import PrivateRoute from './privateRoute';
 import Kitchen from '../pages/kitchen/kitchen.jsx';
+import Order from '../pages/order/order.jsx';
+import PrivateRoute from './privateRoute';
 
 const AllRoutes = () => {
   return (
@@ -20,7 +21,10 @@ const AllRoutes = () => {
           <Route path='/kitchen' element={<PrivateRoute redirectTo="/">
             <Kitchen /> 
           </PrivateRoute>} />
-          </Routes>
+          <Route path='/order' element={<PrivateRoute redirectTo="/">
+            <Order />
+          </PrivateRoute>} />
+        </Routes>
       </div>
     </Router>
   );

@@ -1,6 +1,5 @@
-@import './pages/login/login-signup.module.css';
-@import './pages/menu/menu.module.css';
 @import './components/components.module.css';
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
 
@@ -10,6 +9,8 @@
     --background-cards: #303030;
     --background-color-home: #272829;
     --default-background: #0d0c0c;
+    --default-red: #e23c2e;
+    --default-green: #309746;
 }
 
 * {

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getRole } from '../services/localStorage';
 import styles from './components.module.css';
 
 const MenuHamburguer = () => {
@@ -16,14 +17,17 @@ const MenuHamburguer = () => {
       <section className={active ? 'menu menuOpen' : 'menu menuClose'}>
         <div className={styles.hamburguerMenuList}>
           <ul className={styles.hamburguerMenuListItems}>
+            {getRole() === 'attendant' ? (
+              <li>
+                <button onClick={() => { navigate('/menu') }}>MENU</button>
+              </li>
+            ) : (
+              <li>
+                <button onClick={() => { navigate('/kitchen') }}>COZINHA</button>
+              </li>
+            )}
             <li>
-              <button>MENU</button>
-            </li>
-            <li>
-              <button>COZINHA</button>
-            </li>
-            <li>
-              <button>PEDIDOS PRONTOS</button>
+              <button onClick={() => { navigate('/order') }}>PEDIDOS PRONTOS</button>
             </li>
             <li className={styles.logoutButton}>
               <button onClick={() => {

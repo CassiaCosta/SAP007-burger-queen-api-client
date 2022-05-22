@@ -1,4 +1,4 @@
-import useProducts  from './useProducts'; 
+import useProducts  from './useProducts';
 import ProductCards from '../../components/productInfos';
 import Cart from '../../components/cart';
 import ResultPrice from '../../components/resultPrice';
@@ -13,16 +13,19 @@ const Menu = () => {
   const { 
     handleButtonTypeClick,
     productsFiltered,
-    productsType,
-    handleSelectFlavor,
-    handleSelectComplement,
     handleAddItem,
+    handleSelectComplement,
+    handleSelectFlavor,
+    handleDeleteProducts,
     handleSendToKitchen,
     handleOrderChange,
+    productsType,
     total,
-    items
+    items,
+    orderError,
+    orderInfo
   } = useProducts();
-
+  
   return (
     <div className={styles.root}>
       <main>
@@ -79,9 +82,11 @@ const Menu = () => {
               <h3>Pedido</h3>
             </div>
             <div className={styles.clientInformation}>
-              <input className={styles.clientName} type='text' placeholder='CLIENTE' name='client' autoComplete='off' onChange={handleOrderChange} />
-              <select className={styles.clientTable} defaultValue={'0'} autoComplete='off' name='table' onChange={handleOrderChange}>
-                <option value='0'>MESA</option>
+              <input className={styles.clientName} type='text' placeholder='CLIENTE' name='client' 
+              autoComplete='off' onChange={handleOrderChange} value={orderInfo.client}/>
+              <select className={styles.clientTable} autoComplete='off' 
+              name='table' onChange={handleOrderChange} value={orderInfo.table}>
+                <option value=''>MESA</option>
                 <option value='1'>Mesa 1</option>
                 <option value='2'>Mesa 2</option>
                 <option value='3'>Mesa 3</option>
@@ -105,6 +110,7 @@ const Menu = () => {
                   price={item.price}
                   qtd={item.qtd} 
                   type={item.sub_type}
+                  onClick={() => handleDeleteProducts(item)}
                   />
                 )
               })}
@@ -114,6 +120,7 @@ const Menu = () => {
                 <h4>SUB-TOTAL</h4>
                 <ResultPrice value={total} />
               </div>
+              <p className={styles.orderError}>{orderError}</p>
               <button className={styles.finalizeOrder} onClick={handleSendToKitchen}>Finalizar pedido</button>
             </section>
           </section>

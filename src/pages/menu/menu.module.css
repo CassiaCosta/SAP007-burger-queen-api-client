@@ -148,6 +148,13 @@
   align-items: center;
 }
 
+.orderError {
+  background-color: var(--default-red);
+  border-radius: 0.3rem;
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+}
+
 .finalizeOrder {
   height: 2rem;
   width: 100%;
