@@ -51,6 +51,7 @@
 .selectionButton {
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 
 .flavorAndComplementSelection {
@@ -126,6 +127,10 @@
   margin-right: 0.4rem;
 }
 
+.clientTable {
+  cursor: pointer;
+}
+
 .clientTable option,
 .selectFlavor option {
   background: var(--background-cards);
@@ -164,6 +169,8 @@
   margin-top: 0.5rem;
   background-color: var(--background-cards);
   box-shadow: 2px 2px 2px var(--default-background);
+  cursor: pointer;
+
 }
 
 @media only screen and (min-width:769px) {

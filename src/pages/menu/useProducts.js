@@ -106,6 +106,7 @@ const useProducts = () => {
             setOrderError('Preencher nome e mesa do cliente')
           } else {
             setItems([]);
+            setFlavor([]);
             setOrderError('');
             setOrderInfo({ client: '', table: '' });
 
@@ -130,6 +131,7 @@ const useProducts = () => {
     total,
     orderError,
     orderInfo,
+    flavor
   }
 };
 export default useProducts;

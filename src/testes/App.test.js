@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import Login from '../pages/login/login';
-import SignUp from '../pages/register/signup';
+import SignUp from '../pages/signup/signup';
 
 describe('Login', () => {
 
