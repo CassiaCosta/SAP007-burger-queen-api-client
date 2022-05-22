@@ -112,7 +112,7 @@ const useProducts = () => {
           }
         });
     } else {
-      setOrderError ('Apenas o/a atendente pode servir o pedido')
+      setOrderError ('Apenas o/a atendente fazer um pedido')
     }
   };
 
