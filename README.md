@@ -17,7 +17,7 @@ VAI DAR BOM é uma hamburgueria em crescimento ampliando seu atendimento e otimi
 através de uma interface desenvolvida para eles 
 Aqui você pode acessar o projeto: [VAI DAR BOM](https://suelenescorcio.github.io/SAP007-social-network/)
 
-![VAI DAR BOM](./src/img/mock.jpg)
+![VAI DAR BOM](./src/img//readme-img/mock.jpg)
 
 
 ## 2. Resumo do projeto
@@ -36,31 +36,6 @@ Estas são as informações que temos do cliente:
 >A nossa proposta de serviço 24 horas foi muito bem recebida e, para continuar a
 >crescer, precisamos de um sistema que nos ajude a receber pedidos de nossos
 >clientes.
->
->Nós temos 2 menus. Um muito simples para o café da manhã:
->
->| Ítem                      |Preço R$|
->|---------------------------|------|
->| Café americano            |    5 |
->| Café com leite            |    7 |
->| Sanduíche de presunto e queijo|   10 |
->| Suco de fruta natural     |    7 |
->
->E outro menu para o resto do dia:
->
->| Ítem                      |Preço |
->|---------------------------|------|
->|**Hambúrgueres**           |   **R$**   |
->|Hambúrguer simples         |    10|
->|Hambúrguer duplo           |    15|
->|**Acompanhamentos**        |   **R$**   |
->|Batata frita               |     5|
->|Anéis de cebola            |     5|
->|**Bebidas**                |   **R$**   |
->|Água 500ml                 |     5|
->|Água 750ml                 |     7|
->|Bebida gaseificada 500ml   |     7|
->|Bebida gaseificada 750ml   |    10|
 >
 > **Importante:** Os clientes podem escolher entre hambúrgueres de carne bovina,
 > frango ou vegetariano. Além disso, por um adicional de R\$ 1,00 , eles podem
@@ -152,8 +127,7 @@ Este projeto inclui um _boilerplate_ contendo estrutura de pastas e testes unit�
 
 ## 4. Definição de Produto
 
-O [_Product Owner_](https://www.youtube.com/watch?v=7lhnYbmovb4) nos apresentou
-este _backlog_ que é o resultado do seu trabalho com o cliente até hoje.
+O [_Product Owner_] nos apresentou este _backlog_ que é o resultado do seu trabalho com o cliente até hoje.
 
 ***
 
@@ -258,15 +232,17 @@ rapidamente aos clientes.
 
 Definimos qual seria o fluxo que o usuário seguiria dentro do seu aplicativo 
 
-![FLUXOGRAMA](./src/img/prototipodebaixa.png)
+![FLUXOGRAMA](./src/img/readme-img/Fluxograma.jpg)
 
 
 ### 4.3 Protótipo
 
 E a partir do fluxograma, criamos o prótotipo de como seria a interface do usuário (UI) que seguisse este fluxo.
 
-![PROTÓTIPO](./src/img/prototipodebaixa.png)
-
+![LOGIN](./src/img/readme-img/Login.jpg)
+![CADASTRO](./src/img/readme-img/Cadastro.jpg)
+![MENU - CAFÉ DA MANHÃ](./src/img/readme-img/Breakfast.jpg)
+![MENU - HAMBURGUER](./src/img/readme-img/Hamburguer.jpg)
 
 ### 4.4 Paleta de Cores
 
@@ -274,7 +250,7 @@ A partir das Histórias de Usuário, Pesquisa de Campo, Definição de Desenho d
 concluímos que precisaríamos de uma Paleta de Cores que agregasse personalidade ao produto, ajudando
 o desempenho e usabilidade do produto.
 
-![PALETA DE CORES](./src/img/paletadecores.png)
+![PALETA DE CORES](./src/img/readme-img/.jpg)
 
 ## 5. Testes
 
@@ -285,6 +261,10 @@ Foram realizados teste unitários, assíncronos e integrados.
 
   A aplicação segue 80% ou mais das pontuações de Performance, Progressive
 Web App, Accessibility e Best Practices do [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+
+![LIGHTHOUSE-LOGIN](./src/img/readme-img/Lighthouse-login.png)
+![LIGHTHOUSE-MENU](./src/img/readme-img/Lighthouse-menu.png)
+![LIGHTHOUSE-PEDIDOS](./src/img/readme-img/LIghthouse-pedidos.png)
 
 ## 6. Considerações Finais** 
 
