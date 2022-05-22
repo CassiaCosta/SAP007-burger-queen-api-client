@@ -15,7 +15,7 @@
 
 VAI DAR BOM é uma hamburgueria em crescimento ampliando seu atendimento e otimizando suas operações
 através de uma interface desenvolvida para eles 
-Aqui você pode acessar o projeto: [VAI DAR BOM](https://suelenescorcio.github.io/SAP007-social-network/)
+Aqui você pode acessar o projeto: [VAI DAR BOM](https://cassiacosta.github.io/SAP007-burger-queen-api-client/)
 
 ![VAI DAR BOM](./src/img//readme-img/mock.jpg)
 
@@ -243,6 +243,9 @@ E a partir do fluxograma, criamos o prótotipo de como seria a interface do usu�
 ![CADASTRO](./src/img/readme-img/Cadastro.jpg)
 ![MENU - CAFÉ DA MANHÃ](./src/img/readme-img/Breakfast.jpg)
 ![MENU - HAMBURGUER](./src/img/readme-img/Hamburguer.jpg)
+![MENU - COZINHA](./src/img/readme-img/Cozinha.jpg)
+![MENU - PEDIDOS PRONTOS](./src/img/readme-img/Pedidos.jpg)
+
 
 ### 4.4 Paleta de Cores
 
@@ -250,7 +253,7 @@ A partir das Histórias de Usuário, Pesquisa de Campo, Definição de Desenho d
 concluímos que precisaríamos de uma Paleta de Cores que agregasse personalidade ao produto, ajudando
 o desempenho e usabilidade do produto.
 
-![PALETA DE CORES](./src/img/readme-img/.jpg)
+![PALETA DE CORES](./src/img/readme-img/Paleta.jpg)
 
 ## 5. Testes
 
@@ -258,6 +261,8 @@ Foram realizados teste unitários, assíncronos e integrados.
 
 * Os testes de unidade cobrem no mínimo 70% de _statements_, _functions_,
   _lines_ e _branches_.
+
+![TESTES](./src/img/readme-img/Testes.png)
 
   A aplicação segue 80% ou mais das pontuações de Performance, Progressive
 Web App, Accessibility e Best Practices do [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
@@ -270,5 +275,5 @@ Web App, Accessibility e Best Practices do [Lighthouse](https://developers.googl
 
 - [x] O planejamento deste projeto se encontra no [Trello](https://trello.com/b/gXKsOtaO/burguer-queen)
 - [x] O repositório deste projeto se encontra no [GitHub](https://github.com/CassiaCosta/SAP007-burger-queen-api-client)
-- [x] O deploy deste projeto está hospedado no [GitPages](https://suelenescorcio.github.io/SAP007-social-network/)
+- [x] O deploy deste projeto está hospedado no [GitPages](https://cassiacosta.github.io/SAP007-burger-queen-api-client/)
 - [x] Este projeto foi desenvolvido por [Cássia Costa](https://github.com/CassiaCosta) e [Karol Sontak](https://github.com/karolsontak)

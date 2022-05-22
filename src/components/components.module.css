@@ -261,6 +261,8 @@ ul {
   border-radius: 0.3rem;
   background-color: var(--default-green);
   padding: 0 0.5rem;
+  cursor: pointer;
+
 }
 
 .prepared {
