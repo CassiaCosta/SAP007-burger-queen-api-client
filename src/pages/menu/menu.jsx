@@ -24,7 +24,7 @@ const Menu = () => {
     items,
     orderError,
     orderInfo,
-    flavor
+    flavor,
   } = useProducts();
   
   return (
@@ -50,12 +50,12 @@ const Menu = () => {
               {productsType === 'hamburguer' ? (
                 <section className={styles.flavorAndComplementSelection}>
                   <select className={styles.selectFlavor} value={flavor} onChange={handleSelectFlavor}>
-                    <option value='sabor'>Sabor</option>
+                    <option value=''>Sabor</option>
                     <option value='carne'>Carne</option>
                     <option value='frango'>Frango</option>
                     <option value='vegetariano'>Vegetariano</option>
                   </select>
-                  <div defaultValue={'complemento'} className={styles.selectComplement} onChange={handleSelectComplement}>
+                  <div className={styles.selectComplement} onChange={handleSelectComplement}>
                     <input type='radio' name='check' value='queijo' className={styles.cheeseComplement} onChange={handleSelectComplement} /> Queijo
                     <input type='radio' name='check' value='ovo' className={styles.eggComplement} onChange={handleSelectComplement} /> Ovo
                   </div>

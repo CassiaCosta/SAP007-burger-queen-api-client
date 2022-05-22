@@ -6,7 +6,7 @@ const useProducts = () => {
   const [products, setProducts] = useState([]);
   const [items, setItems] = useState([]);
   const [productsType, setProductsType] = useState('breakfast');
-  const [flavor, setFlavor] = useState();
+  const [flavor, setFlavor] = useState('');
   const [complement, setComplement] = useState('');
   const [total, setTotal] = useState(0);
   const [orderInfo, setOrderInfo] = useState({ client: '', table: '' });
@@ -106,10 +106,10 @@ const useProducts = () => {
             setOrderError('Preencher nome e mesa do cliente')
           } else {
             setItems([]);
-            setFlavor([]);
+            setFlavor('');
+            setComplement('');
             setOrderError('');
             setOrderInfo({ client: '', table: '' });
-
           }
         });
     } else {
@@ -131,7 +131,7 @@ const useProducts = () => {
     total,
     orderError,
     orderInfo,
-    flavor
+    flavor,
   }
 };
 export default useProducts;
