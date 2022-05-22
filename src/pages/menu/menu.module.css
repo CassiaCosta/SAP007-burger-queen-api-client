@@ -1,0 +1,190 @@
+.root::before {
+  content: '';
+  background-color: var(--background-color-home);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.navBar {
+  height: 4rem;
+  width: 100%;
+  background-color: var(--default-background);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuHamburguer {
+  height: 3.125rem;
+  list-style-type: none;
+}
+
+.logo {
+  width: 10rem;
+  margin-top: 0.3rem;
+  margin-right: 1rem;
+}
+
+.attendantTabe {
+  height: 84vh;
+  margin: 0.5rem;
+  display: flex;
+}
+
+.orderingTab {
+  width: 60%;
+}
+
+.orderSelection {
+  height: 2rem;
+  border: 0.1rem solid var(--secondy-font-color);
+  border-radius: 0.3rem;
+  box-shadow: .125rem .125rem .125rem var(--default-background);
+  display: flex;
+  justify-content: space-around;
+}
+
+.selectionButton {
+  border: none;
+  background: transparent;
+}
+
+.flavorAndComplementSelection {
+  width: 55%;
+  margin-top: 0.3rem;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.selectFlavor {
+  width: 6rem;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.selectComplement {
+  width: 55%;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.cheeseComplement,
+.eggComplement {
+  margin-right: 0.3rem;
+}
+
+.eggComplement {
+  margin-left: 0.5rem;
+}
+
+.productList {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.5rem;
+}
+
+.orderSection {
+  width: 38%;
+  margin-left: 1rem;
+}
+
+.orderSectionTitle {
+  height: 2.2rem;
+  border-radius: 0.3rem;
+  background-color: var(--background-cards);
+  padding-left: 0.5rem;
+  box-shadow: 2px 2px 2px var(--default-background);
+  display: flex;
+  align-items: center;
+}
+
+.clientInformation {
+  width: 100%;
+  margin-top: 0.3rem;
+  display: inline-flex;
+}
+
+.clientName,
+.clientTable {
+  border: 0.1rem solid var(--secondy-font-color);
+  border-radius: 0.3rem;
+  background: transparent;
+  outline: none;
+}
+
+.clientName {
+  height: 2rem;
+  width: 100%;
+  padding-left: 0.5rem;
+  margin-right: 0.4rem;
+}
+
+.clientTable option,
+.selectFlavor option {
+  background: var(--background-cards);
+}
+
+.finalization {
+  width: 37.2%;
+  position: fixed;
+  bottom: 12px;
+}
+
+.totalOrder {
+  height: 2rem;
+  border: 0.1rem solid var(--secondy-font-color);
+  border-radius: 0.3rem;
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--background-color-home);
+  align-items: center;
+}
+
+.orderError {
+  background-color: var(--default-red);
+  border-radius: 0.3rem;
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+}
+
+.finalizeOrder {
+  height: 2rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0 0.5rem;
+  margin-top: 0.5rem;
+  background-color: var(--background-cards);
+  box-shadow: 2px 2px 2px var(--default-background);
+}
+
+@media only screen and (min-width:769px) {
+  .orderSelection {
+    height: 3rem;
+  }
+  .selectionButton {
+    font-size: 1.3rem;
+  }
+  .productList {
+    margin-top: 2rem;
+    grid-template-columns: auto auto auto;
+  }
+  .flavorAndComplementSelection {
+    margin-top: 1rem;
+  }
+  .selectFlavor,
+  .selectComplement {
+    font-size: 1rem;
+  }
+  .orderSectionTitle {
+    height: 3.2rem;
+  }
+}
