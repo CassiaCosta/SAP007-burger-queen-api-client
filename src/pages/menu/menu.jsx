@@ -23,6 +23,7 @@ const Menu = () => {
     total,
     items,
     orderError,
+    orderInfo,
   } = useProducts();
   
   return (
@@ -81,9 +82,9 @@ const Menu = () => {
               <h3>Pedido</h3>
             </div>
             <div className={styles.clientInformation}>
-              <input className={styles.clientName} type='text' placeholder='CLIENTE' name='client' autoComplete='off' onChange={handleOrderChange} />
-              <select className={styles.clientTable} defaultValue={'0'} autoComplete='off' name='table' onChange={handleOrderChange}>
-                <option value='0'>MESA</option>
+              <input className={styles.clientName} type='text' placeholder='CLIENTE' value={orderInfo.client} name='client' autoComplete='off' onChange={handleOrderChange} />
+              <select className={styles.clientTable} autoComplete='off' value={orderInfo.table} name='table' onChange={handleOrderChange}>
+                <option value=''>MESA</option>
                 <option value='1'>Mesa 1</option>
                 <option value='2'>Mesa 2</option>
                 <option value='3'>Mesa 3</option>

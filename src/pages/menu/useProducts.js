@@ -103,11 +103,15 @@ const useProducts = () => {
         .then((res => res.json()))
         .then((data) => {
           if (data.code === 400) {
-            setOrderError('Preencher nome e mesa do cliente')
+            setOrderError('Preencher nome e mesa do cliente');
           } else {
             setItems([]);
+            setOrderError('');
+            setOrderInfo({ client: '', table: '' })
           }
-        });
+        })
+    } else {
+      setOrderError('Apenas o/a atendente poder servir o pedido!');
     }
   };
 
@@ -124,6 +128,7 @@ const useProducts = () => {
     items,
     total,
     orderError,
+    orderInfo,
   }
 };
 export default useProducts;

@@ -2,9 +2,9 @@ import React from 'react';
 
 const ResultPrice = (total) => {
   return (
-    <div>
+    <article>
       <p>R$ {total.value},00</p>
-    </div>
+    </article>
   );
 };
 

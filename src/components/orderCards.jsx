@@ -1,5 +1,7 @@
 import React from 'react';
 import OrderProducts from './orderProduct';
+import { TimeOrInterval} from './time/time';
+import { initialStatus } from './time/date';
 import styles from './components.module.css';
 
 const nameButton = (status) => {
@@ -22,15 +24,15 @@ const colorClass = (status) => {
   }
 };
 
-const initialStatus = (status) => {
-  if (status === 'pending') {
-    return 'Pendente';
-  } else if (status === 'preparando') {
-    return 'Preparando';
-  } else {
-    return 'Finalizado';
-  }
-};
+// const initialStatus = (status) => {
+//   if (status === 'pending') {
+//     return 'Pendente';
+//   } else if (status === 'preparando') {
+//     return 'Preparando';
+//   } else {
+//     return 'Finalizado';
+//   }
+// };
 
 const OrderCard = ({
   id,
@@ -39,6 +41,8 @@ const OrderCard = ({
   status,
   onClick,
   products,
+  updatedAt,
+  createdAt,
   error,
 }) => (
   <section className={styles.orderCardOrganization}>
@@ -50,7 +54,11 @@ const OrderCard = ({
         </div>
         <div className={styles.orderInformation}>
           <p>Pedido N°{id}</p>
-          <p>Data e hora</p>
+          <TimeOrInterval
+            createdAt={createdAt}
+            updatedAt={updatedAt}
+            status={status}
+          />
         </div>
       </section>
       <section className={styles.orderItemList}>

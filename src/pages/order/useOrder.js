@@ -29,7 +29,6 @@ const useOrder = () => {
         .then(() => setOrderStatus([...orderStatus, { id: elem.id, status: 'servido' }]));
       } else {
         setError('Apenas o(a) atendente pode servir o pedido');
-        console.log('Apenas um atendente pode servir os pedidos')
       }
       
     };
