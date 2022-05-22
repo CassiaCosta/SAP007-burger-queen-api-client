@@ -77,8 +77,8 @@ const OrderCard = ({
     </div>
     <section>
       <PreparationTime
-       createdAt={createdAt}
-       updatedAt={updatedAt}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
         />
       <p className={styles.errorMessage}>{error}</p>
       <div className={styles.orderFooter}>

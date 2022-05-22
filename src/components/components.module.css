@@ -220,10 +220,6 @@ ul {
   align-items: center;
 }
 
-.orderInformation {
-  justify-items: end;
-}
-
 .orderItemList {
   padding: 1rem 0.5rem;
 }
