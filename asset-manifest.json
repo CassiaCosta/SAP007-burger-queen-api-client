@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/SAP007-burger-queen-api-client/static/css/main.efc0beaf.css",
-    "main.js": "/SAP007-burger-queen-api-client/static/js/main.68a1ed30.js",
+    "main.css": "/SAP007-burger-queen-api-client/static/css/main.59eaceeb.css",
+    "main.js": "/SAP007-burger-queen-api-client/static/js/main.a0741652.js",
     "static/media/background.jpg": "/SAP007-burger-queen-api-client/static/media/background.0571322bcb5c2306adfa.jpg",
     "static/media/logo.png": "/SAP007-burger-queen-api-client/static/media/logo.9192795ea5c059df7b1e.png",
     "index.html": "/SAP007-burger-queen-api-client/index.html",
-    "main.efc0beaf.css.map": "/SAP007-burger-queen-api-client/static/css/main.efc0beaf.css.map",
-    "main.68a1ed30.js.map": "/SAP007-burger-queen-api-client/static/js/main.68a1ed30.js.map"
+    "main.59eaceeb.css.map": "/SAP007-burger-queen-api-client/static/css/main.59eaceeb.css.map",
+    "main.a0741652.js.map": "/SAP007-burger-queen-api-client/static/js/main.a0741652.js.map"
   },
   "entrypoints": [
-    "static/css/main.efc0beaf.css",
-    "static/js/main.68a1ed30.js"
+    "static/css/main.59eaceeb.css",
+    "static/js/main.a0741652.js"
   ]
 }
