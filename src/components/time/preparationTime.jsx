@@ -1,4 +1,4 @@
-import { getInterval } from './date.jsx';
+import { getInterval } from './date.js';
 
 export const PreparationTime = ({ createdAt, updatedAt }) => {
   return (

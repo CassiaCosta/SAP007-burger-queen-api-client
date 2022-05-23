@@ -57,9 +57,34 @@ const Menu = () => {
                     <option value='vegetariano'>Vegetariano</option>
                   </select>
                   <div className={styles.selectComplement} onChange={handleSelectComplement}>
-                    <input type='radio' name='check' value='queijo' className={styles.cheeseComplement} onChange={handleSelectComplement} /> Queijo
-                    <input type='radio' name='check' value='ovo' className={styles.eggComplement} onChange={handleSelectComplement} /> Ovo
-                  </div>
+                    <input 
+                    type= 'radio'
+                    id = 'no-complement'                
+                    name='check' 
+                    value='' 
+                    className={styles.noComplement} 
+                    onChange={handleSelectComplement}
+                    /> {''}
+                    <label htmlFor= 'no-complement'>sem complemento</label>
+                    <input 
+                    type= 'radio'
+                    id = 'cheese'                
+                    name='check' 
+                    value='queijo' 
+                    className={styles.cheeseComplement} 
+                    onChange={handleSelectComplement}
+                    /> {''}
+                    <label htmlFor= 'cheese'>queijo</label>
+                    <input 
+                    type= 'radio'
+                    id = 'egg'                
+                    name='check' 
+                    value='ovo' 
+                    className={styles.eggComplement} 
+                    onChange={handleSelectComplement}
+                    /> {''}
+                    <label htmlFor= 'egg'>ovo</label>
+                </div>
                 </section>
               ) : ''}
             </div>

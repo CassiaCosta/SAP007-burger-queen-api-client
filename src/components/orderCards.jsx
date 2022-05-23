@@ -1,11 +1,10 @@
 import React from 'react';
 import OrderProducts from './orderProduct';
 import styles from './components.module.css';
-import { TimeOrInterval } from './time/time';
+import { CreatedTime } from './time/createdTime';
 import { PreparationTime } from './time/preparationTime';
-import { initialStatus } from "./time/date";
+import { initialStatus } from './time/date';
 import { getRole } from '../services/localStorage';
-
 
 const nameButton = (status) => {
   if (status === 'pending') {
@@ -47,7 +46,7 @@ const OrderCard = ({
         </div>
         <div className={styles.orderInformation}>
           <p>Pedido N°{id}</p>
-          <TimeOrInterval
+          <CreatedTime
             createdAt={createdAt}
           />
         </div>
@@ -75,10 +74,10 @@ const OrderCard = ({
       <div className={styles.orderFooter}>
         <p className={styles.orderStatus}>{initialStatus(status)}</p>
         {getRole() === 'chef' && initialStatus(status) === 'Pendente' || initialStatus(status) === 'Preparando' ? (
+          <button className={`kitchenChefButton ${colorClass(status)}`} onClick={onClick}> {nameButton(status)} </button> 
+        ) : getRole() === 'attendant' && initialStatus(status) === 'Finalizado' ? ( 
           <button className={`kitchenChefButton ${colorClass(status)}`} onClick={onClick}> {nameButton(status)} </button>
-        ) : getRole() === 'attendant' && initialStatus(status) === 'Finalizado' ? (
-          <button className={`kitchenChefButton ${colorClass(status)}`} onClick={onClick}> {nameButton(status)} </button>
-        ) : ''}
+        ) : ''} 
       </div>
     </section>
   </section>

@@ -20,7 +20,7 @@ const Kitchen = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       return getData();
-    }, 1000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
