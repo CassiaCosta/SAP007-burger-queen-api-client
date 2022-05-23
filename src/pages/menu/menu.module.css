@@ -55,7 +55,7 @@
 }
 
 .flavorAndComplementSelection {
-  width: 55%;
+  width: 100%;
   margin-top: 0.3rem;
   display: inline-flex;
   justify-content: space-between;
@@ -69,18 +69,16 @@
 }
 
 .selectComplement {
-  width: 55%;
+  width: 100%;
   font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
 }
 
+.noComplement,
 .cheeseComplement,
 .eggComplement {
   margin-right: 0.3rem;
-}
-
-.eggComplement {
   margin-left: 0.5rem;
 }
 

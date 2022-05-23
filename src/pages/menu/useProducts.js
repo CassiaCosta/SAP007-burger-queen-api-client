@@ -46,8 +46,6 @@ const useProducts = () => {
         filterHamburguer = filterHamburguer.filter((elem) => elem.complement === complement)
       }
       return filterHamburguer;
-      // return products.filter((elem) => elem.sub_type === 'hamburguer')
-      // return products.filter((elem) => elem.id === 33 || elem.id === 42)
     } else if( productsType === 'side' || productsType === 'drinks') {
       return products.filter((elem) => elem.sub_type === productsType)
     }
