@@ -4,6 +4,7 @@ import styles from './components.module.css';
 import { TimeOrInterval } from './time/time';
 import { PreparationTime } from './time/preparationTime';
 import { initialStatus } from "./time/date";
+import { getRole } from '../services/localStorage';
 
 
 const nameButton = (status) => {
@@ -11,7 +12,7 @@ const nameButton = (status) => {
     return 'Preparar';
   } else if (status === 'preparando') {
     return 'Finalizar';
-  } else {
+  } else if(status === 'finalizado') {
     return 'Servir';
   }
 };
@@ -25,16 +26,6 @@ const colorClass = (status) => {
     return 'finish';
   }
 };
-
-// const initialStatus = (status) => {
-//   if (status === 'pending') {
-//     return 'Pendente';
-//   } else if (status === 'preparando') {
-//     return 'Preparando';
-//   } else {
-//     return 'Finalizado';
-//   }
-// };
 
 const OrderCard = ({
   id,
@@ -83,7 +74,11 @@ const OrderCard = ({
       <p className={styles.errorMessage}>{error}</p>
       <div className={styles.orderFooter}>
         <p className={styles.orderStatus}>{initialStatus(status)}</p>
-        <button className={`kitchenChefButton ${colorClass(status)}`} onClick={onClick}> {nameButton(status)} </button>
+        {getRole() === 'chef' && initialStatus(status) === 'Pendente' || initialStatus(status) === 'Preparando' ? (
+          <button className={`kitchenChefButton ${colorClass(status)}`} onClick={onClick}> {nameButton(status)} </button>
+        ) : getRole() === 'attendant' && initialStatus(status) === 'Finalizado' ? (
+          <button className={`kitchenChefButton ${colorClass(status)}`} onClick={onClick}> {nameButton(status)} </button>
+        ) : ''}
       </div>
     </section>
   </section>

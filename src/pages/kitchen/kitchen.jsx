@@ -65,7 +65,7 @@ const Kitchen = () => {
                   table={elem.table}
                   status={elem.status}
                   createdAt={elem.createdAt}
-                  onClick={() => handleStatus(elem)}
+                  onClick={ () => handleStatus(elem)}
                   products={product}
                   error={error}
                 />

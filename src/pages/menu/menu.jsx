@@ -6,6 +6,7 @@ import MenuHamburguer from '../../components/menuHamburguer';
 
 import logo from '../../img/logo.png';
 import styles from './menu.module.css';
+import { getRole, getToken } from '../../services/localStorage';
 
 
 
@@ -122,7 +123,9 @@ const Menu = () => {
                 <ResultPrice value={total} />
               </div>
               <p className={styles.orderError}>{orderError}</p>
-              <button className={styles.finalizeOrder} onClick={handleSendToKitchen}>Finalizar pedido</button>
+              {getRole() === 'attendant' ? (
+                <button className={styles.finalizeOrder} onClick={handleSendToKitchen}>Finalizar pedido</button>
+              ) : ''}
             </section>
           </section>
         </section>
