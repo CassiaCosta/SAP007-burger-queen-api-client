@@ -5,7 +5,6 @@ import { getRole } from '../../services/localStorage.js';
 const useKitchen = () => {
   const [orders, setOrders] = useState([]);
   const [orderStatus, setOrderStatus] = useState([]);
-  const [error, setError] = useState('');
 
   const getData = () => {
     getOrders('/orders')
@@ -48,8 +47,6 @@ const useKitchen = () => {
           ])
         );
       }
-    } else {
-      setError('Apenas o(a) chef pode atualizar um pedido');
     }
   };
 
@@ -60,7 +57,6 @@ const useKitchen = () => {
     getData,
     ordersFiltered,
     handleStatus,
-    error,
   };
 };
 export default useKitchen;

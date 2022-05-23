@@ -110,8 +110,6 @@ const useProducts = () => {
             setOrderInfo({ client: '', table: '' });
           }
         });
-    } else {
-      setOrderError ('Apenas o/a atendente fazer um pedido')
     }
   };
 

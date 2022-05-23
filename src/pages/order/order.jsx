@@ -4,7 +4,6 @@ import OrderCard from "../../components/orderCards";
 import styles from '../kitchen/kitchen-order.module.css';
 import MenuHamburguer from "../../components/menuHamburguer.jsx";
 import logo from '../../img/logo.png';
-import { getRole } from "../../services/localStorage.js";
 
 const Order = () => {
   const { getData, ordersFiltered, handleStatus, error } = useOrder();

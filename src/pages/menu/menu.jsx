@@ -6,7 +6,7 @@ import MenuHamburguer from '../../components/menuHamburguer';
 
 import logo from '../../img/logo.png';
 import styles from './menu.module.css';
-import { getRole, getToken } from '../../services/localStorage';
+import { getRole } from '../../services/localStorage';
 
 
 

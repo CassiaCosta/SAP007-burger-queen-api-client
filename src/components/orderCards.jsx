@@ -35,7 +35,6 @@ const OrderCard = ({
   createdAt,
   updatedAt,
   products,
-  error,
 }) => (
   <section className={styles.orderCardOrganization}>
     <div>
@@ -70,7 +69,6 @@ const OrderCard = ({
       createdAt={createdAt}
       updatedAt={updatedAt}
         />
-      <p className={styles.errorMessage}>{error}</p>
       <div className={styles.orderFooter}>
         <p className={styles.orderStatus}>{initialStatus(status)}</p>
         {getRole() === 'chef' && initialStatus(status) === 'Pendente' || initialStatus(status) === 'Preparando' ? (

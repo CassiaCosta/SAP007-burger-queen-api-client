@@ -14,7 +14,6 @@ const Kitchen = () => {
     handleStatus,
     orders,
     orderStatus,
-    error,
   } = useKitchen();
 
   useEffect(() => {
@@ -67,7 +66,6 @@ const Kitchen = () => {
                   createdAt={elem.createdAt}
                   onClick={ () => handleStatus(elem)}
                   products={product}
-                  error={error}
                 />
               </li>
             );
